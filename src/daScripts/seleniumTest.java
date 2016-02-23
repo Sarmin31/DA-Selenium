@@ -55,7 +55,7 @@ public class seleniumTest {
 		
 		//----------HOMEPAGE--------------
 //		Go to the home page
-		//Homepage.Run(driver);
+		Homepage.Run(driver);
 		
 //		Go to the landing pages
 		
