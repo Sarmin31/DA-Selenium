@@ -2,7 +2,7 @@ package daScripts;
 
 import java.io.IOException;
 
-import javax.mail.MessagingException;
+
 
 import org.openqa.selenium.WebDriver;
 
@@ -11,12 +11,12 @@ public class OlderAmericans {
 	public OlderAmericans(){
 	}
 	
-	public static void run(WebDriver driver) throws InterruptedException, MessagingException, IOException{
+	public static void run(WebDriver driver) throws InterruptedException,  IOException{
 		//System.out.println("Running test for Older Americans");
 		driver.get("http://" + seleniumTest.domain +".disasterassistance.gov/information/older-americans");
 		Header.run(driver, page);
 		olderAmericans(driver, page);
-		SendEmail.run(driver);
+//		SendEmail.run(driver);
 		Footer.run(driver, page);
 		
 		RunTest.translate(driver);
@@ -24,27 +24,23 @@ public class OlderAmericans {
 		
 		Header.run(driver, spanishPage);
 		olderAmericans(driver, spanishPage);
-		SendEmail.run(driver);
+//		SendEmail.run(driver);
 		Footer.run(driver, spanishPage);
 		
-		driver.get("http://www.disasterassistance.gov/");
+		driver.get("http://" + seleniumTest.domain +".disasterassistance.gov/");
 	}
 	
 	public static void olderAmericans(WebDriver driver, String page) throws InterruptedException{
 		String section = "Older Americans";
-		String[] onlineResourcesContent ={
+		String[] onlineResourcesContent = {
 				"xpath",
 				"//*[@id=\"content-container\"]/article/div/div/div/div[1]",
 				"Online Resources"};
-		
-		
-		String[] dlGuidesContent ={
+		String[] dlGuidesContent = {
 				"xpath",
 				"//*[@id=\"content-container\"]/article/div/div/div/div[2]",
 				"Downloadable Guides and Resources"};
-		
-		
-		String[] videosContent ={
+		String[] videosContent = {
 				"xpath",
 				"//*[@id=\"content-container\"]/article/div/div/div/div[3]",
 				"Videos"};

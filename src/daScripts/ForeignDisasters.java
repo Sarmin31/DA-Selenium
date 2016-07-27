@@ -12,7 +12,7 @@ public class ForeignDisasters {
 		driver.get("http://"+seleniumTest.domain+".disasterassistance.gov/information/foreign-disasters");
 		Header.run(driver, page);
 		foreignDisasters(driver, page);
-		SendEmail.run(driver);
+//		SendEmail.run(driver);
 		Footer.run(driver, page);
 		
 		RunTest.translate(driver);
@@ -20,39 +20,31 @@ public class ForeignDisasters {
 		
 		Header.run(driver, spanishPage);
 		foreignDisasters(driver, spanishPage);
-		SendEmail.run(driver);
+//		SendEmail.run(driver);
 		Footer.run(driver, spanishPage);
 		
-		driver.get("http://www.disasterassistance.gov/");
+		driver.get(seleniumTest.homeURL);
 	}
 	
 	public static void foreignDisasters(WebDriver driver, String page) throws InterruptedException{
 		String section = "Foreign Disasters";
-		String[] foreignDisasterContainer ={
+		String[] foreignDisasterContainer = {
 				"xpath",
 				"//*[@id=\"content-container\"]/article/div/div/div/div[1]",
 				"Foreign Disaster Information"};
-		
-		
-		String[] foreignCrisis ={
+		String[] foreignCrisis = {
 				"xpath",
 				"//*[@id=\"content-container\"]/article/div/div/div/div[1]",
 				"Are You Caught in a Foreign Crisis?"};
-		
-		
-		String[] familyAbroad ={
+		String[] familyAbroad = {
 				"xpath",
 				"//*[@id=\"content-container\"]/article/div/div/div/div[2]",
 				"Are You Concerned About Family Abroad?"};
-		
-		
-		String[] terroristAttack ={
+		String[] terroristAttack = {
 				"xpath",
 				"//*[@id=\"content-container\"]/article/div/div/div/div[3]",
 				"Were You Affected by a Terrorist Attack Abroad?"};
-		
-		
-		String[] disasterResponse ={
+		String[] disasterResponse = {
 				"xpath",
 				"//*[@id=\"content-container\"]/article/div/div/div/div[4]",
 				"Do You Want to Help Support Disaster Response Abroad?"};

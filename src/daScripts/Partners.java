@@ -9,10 +9,10 @@ public class Partners {
 	
 	public static void run(WebDriver driver) throws InterruptedException{
 		//System.out.println("Running test for News Feeds");
-		driver.get("http://www.disasterassistance.gov/about-us/partners");
+		driver.get("http://" + seleniumTest.domain +".disasterassistance.gov/about-us/partners");
 		Header.run(driver, page);
 		partners(driver, page);
-		SendEmail.run(driver);
+//		SendEmail.run(driver);
 		Footer.run(driver, page);
 		
 		RunTest.translate(driver);
@@ -20,33 +20,27 @@ public class Partners {
 		
 		Header.run(driver, spanishPage);
 		partners(driver, spanishPage);
-		SendEmail.run(driver);
+//		SendEmail.run(driver);
 		Footer.run(driver, spanishPage);
 		
-		driver.get("http://www.disasterassistance.gov/");
+		driver.get("http://" + seleniumTest.domain +".disasterassistance.gov/");
 	}
 	
 	public static void partners(WebDriver driver, String page) throws InterruptedException{
 		String section = "Partners";
-		String[] partneringOrg ={
+		String[] partneringOrg = {
 				"xpath",
 				"//*[@id=\"block-views-static-view-pages-block-1\"]/div/div/div/ul/li[1]/div",
 				"Partnering Organizations"};
-		
-		
-		String[] addingForms ={
+		String[] addingForms = {
 				"id",
 				"adding-forms",
 				"Adding new Forms of Assistance"};
-		
-		
-		String[] disasterNewsletter ={
+		String[] disasterNewsletter = {
 				"id",
 				"news-letter-form",
 				"DisasterAssistance.gov e-Newsletter"};
-		
-		
-		String[] disasterPolicy ={
+		String[] disasterPolicy = {
 				"id",
 				"affiliate-policy-text",
 				"Affiliate Policy for DisasterAssistance.gov"};

@@ -2,8 +2,6 @@ package daScripts;
 
 import java.io.IOException;
 
-import javax.mail.MessagingException;
-
 import org.openqa.selenium.WebDriver;
 
 public class Accessibility {
@@ -11,12 +9,12 @@ public class Accessibility {
 	public Accessibility(){
 	}
 	
-	public static void run(WebDriver driver) throws InterruptedException, MessagingException, IOException{
+	public static void run(WebDriver driver) throws InterruptedException, IOException{
 		//System.out.println("Running test for Accessibility");
-		driver.get("http://www.disasterassistance.gov/help/accessibility");
+		driver.get("http://" + seleniumTest.domain +".disasterassistance.gov/help/accessibility");
 		Header.run(driver,page);
 		accessibility(driver,page);
-		SendEmail.run(driver);
+//		SendEmail.run(driver);                                        SJ
 		Footer.run(driver,page);
 		
 		RunTest.translate(driver);
@@ -24,26 +22,24 @@ public class Accessibility {
 		
 		Header.run(driver, spanishPage);
 		accessibility(driver, spanishPage);
-		SendEmail.run(driver);
+//		SendEmail.run(driver);                                         SJ
 		Footer.run(driver, spanishPage);
 		
-		driver.get("http://www.disasterassistance.gov/");
+		driver.get(seleniumTest.homeURL);
 	} 	
 	
 	public static void accessibility(WebDriver driver,String page) throws InterruptedException{
 		String section = "Body";
-		String[] accessibilityContacts ={
+		String[] accessibilityContacts = {
 				"xpath",
 				"//*[@id=\"content-container\"]/article/div/div/div",
 				"Accessibility Contacts"};
-		
-		
-		String[] backgroundImage ={
+		String[] backgroundImage = {
 				"id",
 				"background-image-container",
 				"Background Image"};
 		
-		String[][] myArray ={
+		String[][] myArray = {
 				accessibilityContacts,backgroundImage};
 		RunTest.runTest(myArray,driver,page,section);
 	}

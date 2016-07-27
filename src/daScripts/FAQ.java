@@ -13,7 +13,7 @@ public class FAQ {
 		Header.run(driver, page);
 		faqs(driver, page);
 		RunTest.backgroundImage(driver, page);
-		SendEmail.run(driver);
+//		SendEmail.run(driver);
 		Footer.run(driver,page);
 		
 		RunTest.translate(driver);
@@ -22,68 +22,52 @@ public class FAQ {
 		Header.run(driver, spanishPage);
 		faqs(driver, spanishPage);
 		RunTest.backgroundImage(driver, spanishPage);
+//		SendEmail.run(driver);
 		Footer.run(driver,spanishPage);
 		
-		driver.get("http://"+ seleniumTest.domain +".disasterassistance.gov/help/faqs");
+		driver.get(seleniumTest.homeURL);
 	}
 	
 	public static void faqs(WebDriver driver, String page) throws InterruptedException{
 		String section = "FAQs";
-		String[] faqsHeader ={
+		String[] faqsHeader = {
 				"xpath",
 				"//*[@id=\"inner-background-content-container\"]/div/article",
 				"Frequently Asked Questions"};
-		
-		
-		String[] beforeYouApply ={
+		String[] beforeYouApply = {
 				"xpath",
 				"//*[@id=\"block-views-static-view-pages-block-4\"]/div/div/div/ul/li[1]/div",
 				"Before You Apply"};
-		
-		
-		String[] buttonCountryDeclared ={
+		String[] buttonCountryDeclared = {
 				"xpath",
 				"//*[@id=\"block-views-static-view-pages-block-4\"]/div/div/div/ul/li[1]/div/div[2]/div/div[2]/div/h4",
 				"What if my country is not declared?"};
-		
-		
-		String[] whenYouApply ={
+		String[] whenYouApply = {
 				"xpath",
 				"//*[@id=\"block-views-static-view-pages-block-4\"]/div/div/div/ul/li[2]/div",
 				"When You Apply"};
-		
-		
-		String[] createAccount ={
+		String[] createAccount = {
 				"xpath",
 				"//*[@id=\"hdi-create-account\"]/h4",
 				"How do I create an account?"};
-		
-		
-		String[] afterYouApply ={
+		String[] afterYouApply = {
 				"xpath",
 				"//*[@id=\"block-views-static-view-pages-block-4\"]/div/div/div/ul/li[3]/div",
 				"After You Apply"};
-		
-		
-		String[] disasterFraud ={
+		String[] disasterFraud = {
 				"xpath",
 				"//*[@id=\"block-views-static-view-pages-block-4\"]/div/div/div/ul/li[3]/div/div[2]/div/div[7]/div/h4",
 				"How can I report disaster fraud?"};
-		
-		
-		String[] preRegistration ={
+		String[] preRegistration = {
 				"xpath",
 				"//*[@id=\"block-views-static-view-pages-block-4\"]/div/div/div/ul/li[4]/div",
 				"Pre-Registration"};
-		
-		
-		String[] whatIsPrereg ={
+		String[] whatIsPrereg = {
 				"xpath",
 				"//*[@id=\"block-views-static-view-pages-block-4\"]/div/div/div/ul/li[4]/div/div[2]/div/div[2]/div/h4",
 				"What is Pre-Registration?"};
 		
-		
-		String[][] myArray ={
+		String[][] myArray = {
 				faqsHeader,beforeYouApply,buttonCountryDeclared,whenYouApply,createAccount,afterYouApply,
 				disasterFraud,preRegistration,whatIsPrereg};
 		RunTest.runTest(myArray,driver,section,page);
