@@ -29,7 +29,7 @@ public class seleniumTest {
 		System.setOut(out);
 		
 		// Chrome set up 
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\570981\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		
 		//Firefox
