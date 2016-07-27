@@ -12,7 +12,7 @@ public class NewsFeeds {
 		driver.get("http://"+seleniumTest.domain +".disasterassistance.gov/information/news-feeds");
 		Header.run(driver, page);
 		newsFeeds(driver, page);
-		SendEmail.run(driver);
+//		SendEmail.run(driver);
 		Footer.run(driver, page);
 		
 		RunTest.translate(driver);
@@ -20,10 +20,10 @@ public class NewsFeeds {
 		
 		Header.run(driver, spanishPage);
 		newsFeeds(driver, spanishPage);
-		SendEmail.run(driver);
+//		SendEmail.run(driver);
 		Footer.run(driver, spanishPage);
 		
-		driver.get("http://www.disasterassistance.gov/");
+		driver.get(seleniumTest.homeURL);
 	}
 	
 	public static void newsFeeds(WebDriver driver, String page) throws InterruptedException{
@@ -32,33 +32,27 @@ public class NewsFeeds {
 				"xpath",
 				"//*[@id=\"news-feed-container\"]/p",
 				"News Feed Information"};
-		
-		String[] declaredDisasters ={
+		String[] declaredDisasters = {
 				"id",
 				"disasters",
 				"Declared Disasters Lastest Info"};
-		
-		String[] severeStorms ={
+		String[] severeStorms = {
 				"id",
 				"storms",
 				"Severe Storms Lastest Info"};
-		
-		String[] hurricanes ={
+		String[] hurricanes = {
 				"id",
 				"hurricanes",
 				"Hurricanes Lastest Info"};
-		
-		String[] wildfire ={
+		String[] wildfire = {
 				"id",
 				"wildfire",
 				"Wildfire Lastest Info"};
-		
-		String[] earthquakes ={
+		String[] earthquakes = {
 				"id",
 				"earthquakes",
 				"Earthquakes Lastest Info"};
-		
-		String[] drought ={
+		String[] drought = {
 				"id",
 				"drought",
 				"Drought Lastest Info"};

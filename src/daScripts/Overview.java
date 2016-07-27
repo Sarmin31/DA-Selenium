@@ -9,10 +9,10 @@ public class Overview {
 	
 	public static void run(WebDriver driver) throws InterruptedException{
 		//System.out.println("Running test for News Feeds");
-		driver.get("http://www.disasterassistance.gov/about-us/overview");
+		driver.get("http://" + seleniumTest.domain +".disasterassistance.gov/about-us/overview");
 		Header.run(driver, page);
 		overview(driver, page);
-		SendEmail.run(driver);
+//		SendEmail.run(driver);
 		Footer.run(driver, page);
 		
 		RunTest.translate(driver);
@@ -20,27 +20,23 @@ public class Overview {
 		
 		Header.run(driver, spanishPage);
 		overview(driver, spanishPage);
-		SendEmail.run(driver);
+//		SendEmail.run(driver);
 		Footer.run(driver, spanishPage);
 		
-		driver.get("http://www.disasterassistance.gov/");
+		driver.get("http://" + seleniumTest.domain +".disasterassistance.gov/");
 	}
 	
 	public static void overview(WebDriver driver, String page) throws InterruptedException{
 		String section = "Overview";
-		String[] missionContent ={
+		String[] missionContent = {
 				"xpath",
 				"//*[@id=\"content-container\"]/article/div/div/div/div[1]/div/div",
 				"Mission"};
-		
-		
-		String[] backgroundContent ={
+		String[] backgroundContent = {
 				"xpath",
 				"//*[@id=\"content-container\"]/article/div/div/div/div[2]/div/div",
 				"Background"};
-		
-		
-		String[] eGovernmentContent ={
+		String[] eGovernmentContent = {
 				"xpath",
 				"//*[@id=\"content-container\"]/article/div/div/div/div[4]/div/div",
 				"E-Government"};

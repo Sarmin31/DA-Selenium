@@ -2,8 +2,6 @@ package daScripts;
 
 import java.io.IOException;
 
-import javax.mail.MessagingException;
-
 import org.openqa.selenium.WebDriver;
 
 public class GetAssistanceLanding {
@@ -12,84 +10,72 @@ public class GetAssistanceLanding {
 		
 	}
 	
-	public static void run(WebDriver driver) throws InterruptedException, MessagingException, IOException{
+	public static void run(WebDriver driver) throws InterruptedException,  IOException{
 		//System.out.println("Running test for the Get Assistance Landing Page");
 		driver.get("http://"+ seleniumTest.domain +".disasterassistance.gov/get-assistance");
-		Header.run(driver,page);
+//		Header.run(driver,page);
 		getAssistance(driver,page);
-		SendEmail.run(driver);
-		Footer.run(driver,page);
+//		SendEmail.run(driver);
+//		Footer.run(driver,page);
 		
 		RunTest.translate(driver);
 		String spanishPage = page + " - Spanish";
 		
-		Header.run(driver, spanishPage);
+//		Header.run(driver, spanishPage);
 		getAssistance(driver, spanishPage);
-		SendEmail.run(driver);
-		Footer.run(driver, spanishPage);
+//		SendEmail.run(driver);
+//		Footer.run(driver, spanishPage);
 		
 		driver.get(seleniumTest.homeURL);
 	}
 	
 	public static void getAssistance(WebDriver driver,String page) throws InterruptedException{
 		String section = "Buttons";
-		String[] backgroundImage ={
+		String[] backgroundImage = {
 				"id",
 				"background-image-container",
 				"Background Image"};
-		
-		
-		String[] buttonAddressLookUp ={
+		String[] buttonAddressLookUp = {
 				"xpath",
 				"//*[@id=\"landing-page-container\"]/a[1]/article",
 				"Address Look-up Button"};
-		
-		
-		String[] buttonFindAssistance ={
+		String[] buttonFindAssistance = {
 				"xpath",
 				"//*[@id=\"landing-page-container\"]/a[2]/article",
 				"Find Assistance Button"};
-		
-		
-		String[] buttonApplyOnline ={
+		String[] buttonApplyOnline = {
 				"xpath",
 				"//*[@id=\"landing-page-container\"]/a[3]/article",
 				"Apply Online Button"};
-		
-		
-		String[] buttonCheckStatus ={
+		String[] buttonCheckStatus = {
 				"xpath",
 				"//*[@id=\"landing-page-container\"]/a[4]/article",
 				"Check Your Status Button"};
-		
-		
-		String[] buttonAssistanceByCategory ={
+		String[] buttonAssistanceByCategory = {
 				"xpath",
 				"//*[@id=\"landing-page-container\"]/a[5]/article",
 				"Assistance by Category Button"};
-		
-		
-		String[] buttonAssistanceByFA ={
+		String[] buttonAssistanceByFA = {
 				"xpath",
 				"//*[@id=\"landing-page-container\"]/a[6]/article",
 				"Assistance by Federal Agency Button"};
-		
-		
-		String[] buttonAppChecklist ={
+		String[] buttonOtherRecoveryHelp = {
+				"xpath",
+				"//*[@id=\"landing-page-container\"]/a[7]/article",
+				"Other Recovery Help"};
+		String[] buttonAppChecklist = {
 				"xpath",
 				"//*[@id=\"landing-page-container\"]/a[7]/article",
 				"Application Checklist Button"};
-		
-		
-		String[] buttonForms ={
+		String[] buttonForms = {
 				"xpath",
 				"//*[@id=\"landing-page-container\"]/a[8]/article",
 				"Forms Button"};
 				
 		String[][] myArray = {
 				backgroundImage,buttonAddressLookUp,buttonFindAssistance,buttonApplyOnline,
-				buttonCheckStatus,buttonAssistanceByCategory,buttonAssistanceByFA,buttonAppChecklist,
-				buttonForms};
+				buttonCheckStatus,buttonAssistanceByCategory,buttonAssistanceByFA,buttonOtherRecoveryHelp,
+				buttonAppChecklist,buttonForms};
 		RunTest.runTest(myArray,driver,page, section);
 		
 	}

@@ -17,76 +17,62 @@ public class CheckStatus {
 	
 	public static void checkStatus(WebDriver driver, String page) throws InterruptedException{
 		String section = "Check Your Status";
-		String[] leftHeader ={
+		String[] leftHeader = {
 				"xpath",
 				"/html/body/table/tbody/tr[2]/td/div/table/tbody/tr[1]/td[1]",
 				"Left Header"};
-		
-		String[] buttonHome ={
+		String[] buttonHome = {
 				"xpath",
 				"//*[@id=\"MM_Home\"]/div",
 				"Disaster Assistance Home"};
-		
-		String[] rightHeader ={
+		String[] rightHeader = {
 				"xpath",
 				"/html/body/table/tbody/tr[2]/td/div/table/tbody/tr[1]/td[2]",
 				"Right Header"};
-		
-		String[] buttonContactUs ={
+		String[] buttonContactUs = {
 				"xpath",
 				"//*[@id=\"linkbar\"]/a",
 				"Contact Us Button"};
-		
-		String[] formContainer ={
+		String[] formContainer = {
 				"xpath",
 				"//*[@id=\"pageContent\"]/form",
 				"formContainer"};
-		
-		String[] inputUsername ={
+		String[] inputUsername = {
 				"id",
 				"uid",
 				"Username Input"};
-		
-		String[] inputPassword ={
+		String[] inputPassword = {
 				"id",
 				"pwd",
 				"Password Input"};
-		
-		String[] inputPin ={
+		String[] inputPin = {
 				"id",
 				"pin",
 				"Pin Input"};
-		
-		String[] buttonForgotUser ={
+		String[] buttonForgotUser = {
 				"xpath",
 				"//*[@id=\"pageContent\"]/form/table[2]/tbody/tr[4]/td[2]/a",
 				"Forgot Username Button"};
-		
-		String[] buttonForgotPass ={
+		String[] buttonForgotPass = {
 				"xpath",
 				"//*[@id=\"pageContent\"]/form/table[2]/tbody/tr[5]/td[2]/a",
 				"Forgot Password Button"};
-		
-		String[] buttonCancel ={
+		String[] buttonCancel = {
 				"id",
 				"cancel",
 				"Cancel Button"};
-		
-		String[] buttonSignIn ={
+		String[] buttonSignIn = {
 				"id",
 				"next",
 				"Sign In Button"};
-		
-		String[] buttonCreateAcc ={
+		String[] buttonCreateAcc = {
 				"xpath",
 				"//*[@id=\"pageContent\"]/form/table[3]/tbody/tr[2]/td/div/button",
 				"Create Account Button"};
-		
 		String[][] myArray = {
 				leftHeader,buttonHome,rightHeader,buttonContactUs,formContainer,inputUsername,
 				inputPassword,inputPin,buttonForgotUser,buttonForgotPass,buttonCancel,
 				buttonSignIn,buttonCreateAcc};
-		
 		RunTest.runTest(myArray,driver,section,page);
 	}
 }

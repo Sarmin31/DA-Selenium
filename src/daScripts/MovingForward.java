@@ -12,7 +12,7 @@ public class MovingForward {
 		Header.run(driver, page);
 		movingForward(driver, page);
 		RunTest.backgroundImage(driver, page);
-		SendEmail.run(driver);
+//		SendEmail.run(driver);
 		Footer.run(driver, page);
 		
 		RunTest.translate(driver);
@@ -21,43 +21,35 @@ public class MovingForward {
 		Header.run(driver, spanishPage);
 		movingForward(driver, spanishPage);
 		RunTest.backgroundImage(driver, spanishPage);
-		SendEmail.run(driver);
+//		SendEmail.run(driver);
 		Footer.run(driver, spanishPage);
 		
-		driver.get("http://" + seleniumTest.domain +".disasterassistance.gov/");
+		driver.get(seleniumTest.homeURL);
 	}
 	
 	public static void movingForward(WebDriver driver, String page) throws InterruptedException{
 		String section = "Moving Foward";
-		String[] moveFowardIntro ={
+		String[] moveFowardIntro = {
 				"xpath",
 				"//*[@id=\"content-container\"]/article/div[1]/div/div",
 				"Moving Foward Information"};
-		
-		
-		String[] yourHome ={
+		String[] yourHome = {
 				"xpath",
 				"//*[@id=\"content-container\"]/article/div/div/div/div[1]",
 				"Your Home Info"};
-		
-		
-		String[] yourBusiness ={
+		String[] yourBusiness = {
 				"xpath",
 				"//*[@id=\"content-container\"]/article/div/div/div/div[2]",
 				"Your Business or Farm"};
-		
-		String[] yourFinances ={
+		String[] yourFinances = {
 				"xpath",
 				"//*[@id=\"content-container\"]/article/div/div/div/div[3]",
 				"Your finances job and insurance"};
-		
-		
-		String[] yourHealth ={
+		String[] yourHealth = {
 				"xpath",
 				"//*[@id=\"content-container\"]/article/div/div/div/div[4]",
 				"Your Health"};
-		
-		String[] yourOfficialDocuments ={
+		String[] yourOfficialDocuments = {
 				"xpath",
 				"//*[@id=\"content-container\"]/article/div/div/div/div[5]",
 				"Your Official Documents"};

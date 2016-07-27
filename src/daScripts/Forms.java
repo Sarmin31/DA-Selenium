@@ -13,7 +13,7 @@ public class Forms {
 		Header.run(driver, page);
 		assistanceForms(driver, page);
 		RunTest.backgroundImage(driver, page);
-		SendEmail.run(driver);
+//		SendEmail.run(driver);
 		Footer.run(driver, page);
 		
 		RunTest.translate(driver);
@@ -22,31 +22,29 @@ public class Forms {
 		Header.run(driver,  spanishPage);
 		assistanceForms(driver,spanishPage);
 		RunTest.backgroundImage(driver, spanishPage);
+//		SendEmail.run(driver);
 		Footer.run(driver, spanishPage);
-		driver.get("http://www.disasterassistance.gov/");
+		
+		driver.get(seleniumTest.homeURL);
 	}
 	
 	public static void assistanceForms(WebDriver driver, String page) throws InterruptedException{
 		String section = "Forms";
-		String[] instructionsField ={
+		String[] instructionsField = {
 				"xpath",
 				"//*[@id=\"content-container\"]/article/div/div/div/div/div/div/div/div/div/div[1]",
 				"Form Instruction Field"};
-		
-		
-		String[] buttonApplyOnline ={
+		String[] buttonApplyOnline = {
 				"xpath",
 				"//*[@id=\"content-container\"]/article/div/div/div/div/div/div/div/div/div/div[2]",
 				"Apply Online Button"};
-		
-		
-		String[] buttonDownloadPDF ={
+		String[] buttonDownloadPDF = {
 				"xpath",
 				"//*[@id=\"content-container\"]/article/div/div/div/div/div/div/div/div/div/div[3]",
 				"Download Form Button"};
 		
 		
-		String[][] myArray ={
+		String[][] myArray = {
 				instructionsField,buttonApplyOnline,buttonDownloadPDF};
 		RunTest.runTest(myArray,driver,section,page);
 		
